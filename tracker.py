@@ -1,4 +1,4 @@
-# Expense Tracker - Intallment 2
+# Expense Tracker - Intallment 3
 # Miguel Inigo P. Frayna
 
 # Top Banner & Title
@@ -20,12 +20,26 @@ print("\t[4] Exit" + " " * 16 + "(coming soon)")
 # User Input
 name = input("\nWhat's your name? ")
 print(f"Welcome, {name}! Let's log two expenses.\n")
+
+subtotal = 0.0
+
 item1 = input("First expense? ")
 amount1 = float(input("Amount? "))
+subtotal += amount1
+
 item2 = input("Second expense? ")
 amount2 = float(input("Amount? "))
-total = amount1 + amount2
-average = total / 2
+subtotal += amount2
+
+tax_percent = float(input("Tax rate %? "))
+budget = float(input("Your budget? "))
+
+average = subtotal / 2
+tax = subtotal * (tax_percent / 100)
+total = subtotal + tax
+
+over_budget = total > budget
+left = budget - total
 
 # Summary, Bottom Banner & Footer
 print()
@@ -35,5 +49,9 @@ print(f"  - {item1}:\t${amount1}")
 print(f"  - {item2}:\t${amount2}")
 print(f"Total spent:\t${total}")
 print(f"Average:\t${average}")
+print(f"Tax ({tax_percent}%):\t${tax}")
+print(f"Grand total:\t${total}")
+print(f"Over budget?\t{over_budget}")
+print(f"Left in budget:\t${left}")
 print("-" * 40)
 print("Made by: Miguel Inigo P. Frayna | Installment 2")
