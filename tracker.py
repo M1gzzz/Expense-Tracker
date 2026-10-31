@@ -1,4 +1,4 @@
-# Expense Tracker - Intallment 3
+# Expense Tracker - Intallment 
 # Miguel Inigo P. Frayna
 
 # Top Banner & Title
@@ -35,7 +35,7 @@ tax_percent = float(input("Tax rate %? "))
 budget = float(input("Your budget? "))
 
 average = subtotal / 2
-tax = subtotal * (tax_percent / 100)
+tax = subtotal (tax_percent / 100)
 total = subtotal + tax
 
 over_budget = total > budget
